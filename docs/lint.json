@@ -1,0 +1,355 @@
+[
+  {
+    "name": "FormioComponents#createComponent",
+    "filePath": "src/components/Components.js",
+    "lines": [
+      {
+        "lineNumber": 113,
+        "line": "  /**"
+      },
+      {
+        "lineNumber": 114,
+        "line": "   * Create a new component and add it to the components array."
+      },
+      {
+        "lineNumber": 115,
+        "line": "   *"
+      },
+      {
+        "lineNumber": 116,
+        "line": "   * @param component"
+      },
+      {
+        "lineNumber": 117,
+        "line": "   * @param data"
+      },
+      {
+        "lineNumber": 118,
+        "line": "   */"
+      },
+      {
+        "lineNumber": 119,
+        "line": "  createComponent(component, options, data, before) {"
+      }
+    ],
+    "codeParams": [
+      "component",
+      "options",
+      "data",
+      "before"
+    ],
+    "docParams": [
+      "component",
+      "data"
+    ]
+  },
+  {
+    "name": "BaseComponent#createTooltip",
+    "filePath": "src/components/base/Base.js",
+    "lines": [
+      {
+        "lineNumber": 1086,
+        "line": "  /**"
+      },
+      {
+        "lineNumber": 1087,
+        "line": "   * Create the HTML element for the tooltip of this component."
+      },
+      {
+        "lineNumber": 1088,
+        "line": "   * @param {HTMLElement} container - The containing element that will contain this tooltip."
+      },
+      {
+        "lineNumber": 1089,
+        "line": "   */"
+      },
+      {
+        "lineNumber": 1090,
+        "line": "  createTooltip(container, component, classes) {"
+      }
+    ],
+    "codeParams": [
+      "container",
+      "component",
+      "classes"
+    ],
+    "docParams": [
+      "container"
+    ]
+  },
+  {
+    "name": "BaseComponent#appendChild",
+    "filePath": "src/components/base/Base.js",
+    "lines": [
+      {
+        "lineNumber": 1320,
+        "line": "  /**"
+      },
+      {
+        "lineNumber": 1321,
+        "line": "   * Append different types of children."
+      },
+      {
+        "lineNumber": 1322,
+        "line": "   *"
+      },
+      {
+        "lineNumber": 1323,
+        "line": "   * @param child"
+      },
+      {
+        "lineNumber": 1324,
+        "line": "   */"
+      },
+      {
+        "lineNumber": 1325,
+        "line": "  appendChild(element, child) {"
+      }
+    ],
+    "codeParams": [
+      "element",
+      "child"
+    ],
+    "docParams": [
+      "child"
+    ]
+  },
+  {
+    "name": "BaseComponent#ce",
+    "filePath": "src/components/base/Base.js",
+    "lines": [
+      {
+        "lineNumber": 1339,
+        "line": "  /**"
+      },
+      {
+        "lineNumber": 1340,
+        "line": "   * Alias for document.createElement."
+      },
+      {
+        "lineNumber": 1341,
+        "line": "   *"
+      },
+      {
+        "lineNumber": 1342,
+        "line": "   * @param {string} type - The type of element to create"
+      },
+      {
+        "lineNumber": 1343,
+        "line": "   * @param {Object} attr - The element attributes to add to the created element."
+      },
+      {
+        "lineNumber": 1344,
+        "line": "   * @param {Various} children - Child elements. Can be a DOM Element, string or array of both."
+      },
+      {
+        "lineNumber": 1345,
+        "line": "   * @param {Object} events"
+      },
+      {
+        "lineNumber": 1346,
+        "line": "   *"
+      },
+      {
+        "lineNumber": 1347,
+        "line": "   * @return {HTMLElement} - The created element."
+      },
+      {
+        "lineNumber": 1348,
+        "line": "   */"
+      },
+      {
+        "lineNumber": 1349,
+        "line": "  ce(type, attr, children = null) {"
+      }
+    ],
+    "codeParams": [
+      "type",
+      "attr",
+      "children"
+    ],
+    "docParams": [
+      "type",
+      "attr",
+      "children",
+      "events"
+    ]
+  },
+  {
+    "name": "BaseComponent#addInput",
+    "filePath": "src/components/base/Base.js",
+    "lines": [
+      {
+        "lineNumber": 1668,
+        "line": "  /**"
+      },
+      {
+        "lineNumber": 1669,
+        "line": "   * Add a new input to this comonent."
+      },
+      {
+        "lineNumber": 1670,
+        "line": "   *"
+      },
+      {
+        "lineNumber": 1671,
+        "line": "   * @param input"
+      },
+      {
+        "lineNumber": 1672,
+        "line": "   * @param container"
+      },
+      {
+        "lineNumber": 1673,
+        "line": "   * @param noSet"
+      },
+      {
+        "lineNumber": 1674,
+        "line": "   */"
+      },
+      {
+        "lineNumber": 1675,
+        "line": "  addInput(input, container) {"
+      }
+    ],
+    "codeParams": [
+      "input",
+      "container"
+    ],
+    "docParams": [
+      "input",
+      "container",
+      "noSet"
+    ]
+  },
+  {
+    "name": "BaseComponent#calculateValue",
+    "filePath": "src/components/base/Base.js",
+    "lines": [
+      {
+        "lineNumber": 1789,
+        "line": "  /**"
+      },
+      {
+        "lineNumber": 1790,
+        "line": "   * Perform a calculated value operation."
+      },
+      {
+        "lineNumber": 1791,
+        "line": "   *"
+      },
+      {
+        "lineNumber": 1792,
+        "line": "   * @param data - The global data object."
+      },
+      {
+        "lineNumber": 1793,
+        "line": "   *"
+      },
+      {
+        "lineNumber": 1794,
+        "line": "   * @return {boolean} - If the value changed during calculation."
+      },
+      {
+        "lineNumber": 1795,
+        "line": "   */"
+      },
+      {
+        "lineNumber": 1796,
+        "line": "  calculateValue(data, flags) {"
+      }
+    ],
+    "codeParams": [
+      "data",
+      "flags"
+    ],
+    "docParams": [
+      "data"
+    ]
+  },
+  {
+    "name": "SelectComponent#addOption",
+    "filePath": "src/components/select/Select.js",
+    "lines": [
+      {
+        "lineNumber": 147,
+        "line": "  /**"
+      },
+      {
+        "lineNumber": 148,
+        "line": "   * Adds an option to the select dropdown."
+      },
+      {
+        "lineNumber": 149,
+        "line": "   *"
+      },
+      {
+        "lineNumber": 150,
+        "line": "   * @param value"
+      },
+      {
+        "lineNumber": 151,
+        "line": "   * @param label"
+      },
+      {
+        "lineNumber": 152,
+        "line": "   */"
+      },
+      {
+        "lineNumber": 153,
+        "line": "  addOption(value, label, attr) {"
+      }
+    ],
+    "codeParams": [
+      "value",
+      "label",
+      "attr"
+    ],
+    "docParams": [
+      "value",
+      "label"
+    ]
+  },
+  {
+    "name": "FormioForm#onChange",
+    "filePath": "src/formio.form.js",
+    "lines": [
+      {
+        "lineNumber": 870,
+        "line": "  /**"
+      },
+      {
+        "lineNumber": 871,
+        "line": "   * Trigger the change event for this form."
+      },
+      {
+        "lineNumber": 872,
+        "line": "   *"
+      },
+      {
+        "lineNumber": 873,
+        "line": "   * @param changed"
+      },
+      {
+        "lineNumber": 874,
+        "line": "   * @param flags"
+      },
+      {
+        "lineNumber": 875,
+        "line": "   */"
+      },
+      {
+        "lineNumber": 876,
+        "line": "  onChange(flags, changed) {"
+      }
+    ],
+    "codeParams": [
+      "flags",
+      "changed"
+    ],
+    "docParams": [
+      "changed",
+      "flags"
+    ]
+  }
+]

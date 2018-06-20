@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">src/formio.js | formiojs</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="Common js library for client side interaction with &lt;form.io&gt;"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="formiojs"><meta property="twitter:description" content="Common js library for client side interaction with &lt;form.io&gt;"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/formio/formio.js"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/formio.form.builder.js~FormioFormBuilder.html">FormioFormBuilder</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/formio.form.js~FormioForm.html">FormioForm</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/formio.js~Formio.html">Formio</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/formio.pdf.builder.js~FormioPDFBuilder.html">FormioPDFBuilder</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/formio.pdf.js~FormioPDF.html">FormioPDF</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/formio.wizard.builder.js~FormioWizardBuilder.html">FormioWizardBuilder</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/formio.wizard.js~FormioWizard.html">FormioWizard</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createForm">createForm</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-formFactory">formFactory</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components">components</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/Components.js~FormioComponents.html">FormioComponents</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Validator">Validator</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-address">components/address</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/address/Address.js~AddressComponent.html">AddressComponent</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-address-fixtures">components/address/fixtures</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-component">component</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-components">components</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-base">components/base</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/base/Base.js~BaseComponent.html">BaseComponent</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-base-editform">components/base/editForm</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BaseEditAPI">BaseEditAPI</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BaseEditConditional">BaseEditConditional</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BaseEditData">BaseEditData</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BaseEditDisplay">BaseEditDisplay</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BaseEditLayout">BaseEditLayout</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-BaseEditValidation">BaseEditValidation</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-EditFormUtils">EditFormUtils</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-base-fixtures">components/base/fixtures</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-component">component</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-component">component</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-components">components</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-button">components/button</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/button/Button.js~ButtonComponent.html">ButtonComponent</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-button-fixtures">components/button/fixtures</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-component">component</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-components">components</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-checkbox">components/checkbox</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/checkbox/Checkbox.js~CheckBoxComponent.html">CheckBoxComponent</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-checkbox-fixtures">components/checkbox/fixtures</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-component">component</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-components">components</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-columns">components/columns</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/columns/Column.js~ColumnComponent.html">ColumnComponent</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/columns/Columns.js~ColumnsComponent.html">ColumnsComponent</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-columns-fixtures">components/columns/fixtures</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-component">component</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-components">components</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-container">components/container</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/container/Container.js~ContainerComponent.html">ContainerComponent</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-container-fixtures">components/container/fixtures</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-component">component</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-components">components</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-content">components/content</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/content/Content.js~ContentComponent.html">ContentComponent</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-content-fixtures">components/content/fixtures</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-component">component</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-components">components</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-currency">components/currency</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/currency/Currency.js~CurrencyComponent.html">CurrencyComponent</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-currency-fixtures">components/currency/fixtures</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-component">component</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-components">components</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-datagrid">components/datagrid</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/datagrid/DataGrid.js~DataGridComponent.html">DataGridComponent</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-datagrid-fixtures">components/datagrid/fixtures</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-component">component</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-components">components</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-datetime">components/datetime</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/datetime/DateTime.js~DateTimeComponent.html">DateTimeComponent</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-datetime-fixtures">components/datetime/fixtures</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-component">component</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-components">components</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-day">components/day</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/day/Day.js~DayComponent.html">DayComponent</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-day-fixtures">components/day/fixtures</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-component">component</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-components">components</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-editgrid">components/editgrid</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/editgrid/EditGrid.js~EditGridComponent.html">EditGridComponent</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-editgrid-fixtures">components/editgrid/fixtures</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-component">component</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-components">components</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-editrgrid-fixtures">components/editrgrid/fixtures</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-component">component</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-email">components/email</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/email/Email.js~EmailComponent.html">EmailComponent</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-email-fixtures">components/email/fixtures</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-component">component</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-components">components</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-fieldset">components/fieldset</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/fieldset/Fieldset.js~FieldsetComponent.html">FieldsetComponent</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-fieldset-fixtures">components/fieldset/fixtures</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-component">component</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-components">components</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-file">components/file</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/file/File.js~FileComponent.html">FileComponent</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-form">components/form</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/form/Form.js~FormComponent.html">FormComponent</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-form-fixtures">components/form/fixtures</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-component">component</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-component">component</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-components">components</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-hidden">components/hidden</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/hidden/Hidden.js~HiddenComponent.html">HiddenComponent</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-hidden-fixtures">components/hidden/fixtures</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-component">component</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-components">components</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-html">components/html</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/html/HTML.js~HTMLComponent.html">HTMLComponent</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-html-fixtures">components/html/fixtures</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-component">component</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-components">components</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-location">components/location</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/location/Location.js~LocationComponent.html">LocationComponent</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-location-fixtures">components/location/fixtures</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-component">component</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-components">components</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-number">components/number</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/number/Number.js~NumberComponent.html">NumberComponent</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-number-fixtures">components/number/fixtures</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-component">component</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-component">component</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-components">components</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-panel">components/panel</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/panel/Panel.js~PanelComponent.html">PanelComponent</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-panel-fixtures">components/panel/fixtures</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-component">component</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-components">components</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-password">components/password</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/password/Password.js~PasswordComponent.html">PasswordComponent</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-password-fixtures">components/password/fixtures</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-component">component</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-components">components</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-phonenumber">components/phonenumber</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/phonenumber/PhoneNumber.js~PhoneNumberComponent.html">PhoneNumberComponent</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-phonenumber-fixtures">components/phonenumber/fixtures</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-component">component</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-components">components</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-radio">components/radio</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/radio/Radio.js~RadioComponent.html">RadioComponent</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-radio-fixtures">components/radio/fixtures</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-component">component</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-components">components</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-resource">components/resource</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/resource/Resource.js~ResourceComponent.html">ResourceComponent</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-resource-fixtures">components/resource/fixtures</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-component">component</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-components">components</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-select">components/select</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/select/Select.js~SelectComponent.html">SelectComponent</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-select-fixtures">components/select/fixtures</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-component">component</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-component">component</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-components">components</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-selectboxes">components/selectboxes</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/selectboxes/SelectBoxes.js~SelectBoxesComponent.html">SelectBoxesComponent</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-selectboxes-fixtures">components/selectboxes/fixtures</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-component">component</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-component">component</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-components">components</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-signature">components/signature</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/signature/Signature.js~SignatureComponent.html">SignatureComponent</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-signature-fixtures">components/signature/fixtures</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-component">component</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-components">components</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-survey">components/survey</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/survey/Survey.js~SurveyComponent.html">SurveyComponent</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-survey-fixtures">components/survey/fixtures</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-component">component</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-components">components</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-table">components/table</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/table/Table.js~TableComponent.html">TableComponent</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-table-fixtures">components/table/fixtures</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-component">component</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-components">components</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-tabs">components/tabs</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/tabs/Tabs.js~TabsComponent.html">TabsComponent</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-tags">components/tags</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/tags/Tags.js~TagsComponent.html">TagsComponent</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-tags-fixtures">components/tags/fixtures</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-component">component</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-components">components</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-textarea">components/textarea</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/textarea/TextArea.js~TextAreaComponent.html">TextAreaComponent</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-textarea-fixtures">components/textarea/fixtures</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-component">component</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-components">components</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-textfield">components/textfield</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/textfield/TextField.js~TextFieldComponent.html">TextFieldComponent</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-textfield-editform">components/textfield/editForm</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-TextFieldEditDisplay">TextFieldEditDisplay</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-textfield-fixtures">components/textfield/fixtures</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-component">component</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-components">components</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-time">components/time</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/time/Time.js~TimeComponent.html">TimeComponent</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-time-fixtures">components/time/fixtures</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-component">component</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-components">components</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-unknown">components/unknown</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/unknown/Unknown.js~UnknownComponent.html">UnknownComponent</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-well">components/well</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/well/Well.js~WellComponent.html">WellComponent</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-well-fixtures">components/well/fixtures</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-component">component</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-components">components</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#contrib-stripe-checkout">contrib/stripe/checkout</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/contrib/stripe/checkout/StripeCheckout.js~StripeCheckoutComponent.html">StripeCheckoutComponent</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#contrib-stripe-checkout-fixtures">contrib/stripe/checkout/fixtures</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-component">component</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-components">components</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#contrib-stripe-stripe">contrib/stripe/stripe</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/contrib/stripe/stripe/Stripe.js~StripeComponent.html">StripeComponent</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#contrib-stripe-stripe-fixtures">contrib/stripe/stripe/fixtures</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-component">component</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-components">components</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#providers-storage">providers/storage</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-base64">base64</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-dropbox">dropbox</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-s3">s3</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-url">url</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#utils-jsonlogic">utils/jsonlogic</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-lodashOperators">lodashOperators</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/formio.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">// Intentionally use native-promise-only here... Other promise libraries (es6-promise)
+// duck-punch the global Promise definition which messes up Angular 2 since it
+// also duck-punches the global Promise definition. For now, keep native-promise-only.
+import Promise from &apos;native-promise-only&apos;;
+import &apos;whatwg-fetch&apos;;
+import {EventEmitter2 as EventEmitter} from &apos;eventemitter2&apos;;
+import cookies from &apos;browser-cookies&apos;;
+import copy from &apos;shallow-copy&apos;;
+
+const isBoolean = (val) =&gt; typeof val === typeof true;
+const isNil = (val) =&gt; val === null || val === undefined;
+const isObject = (val) =&gt; val &amp;&amp; typeof val === &apos;object&apos;;
+
+/**
+ * The Formio interface class.
+ *
+ *   let formio = new Formio(&apos;https://examples.form.io/example&apos;);
+ */
+export default class Formio {
+  constructor(path, options = {}) {
+    // Ensure we have an instance of Formio.
+    if (!(this instanceof Formio)) {
+      return new Formio(path);
+    }
+
+    // Initialize our variables.
+    this.base = &apos;&apos;;
+    this.projectsUrl = &apos;&apos;;
+    this.projectUrl = &apos;&apos;;
+    this.projectId = &apos;&apos;;
+    this.formUrl = &apos;&apos;;
+    this.formsUrl = &apos;&apos;;
+    this.formId = &apos;&apos;;
+    this.submissionsUrl = &apos;&apos;;
+    this.submissionUrl = &apos;&apos;;
+    this.submissionId = &apos;&apos;;
+    this.actionsUrl = &apos;&apos;;
+    this.actionId = &apos;&apos;;
+    this.actionUrl = &apos;&apos;;
+    this.vsUrl = &apos;&apos;;
+    this.vId = &apos;&apos;;
+    this.vUrl = &apos;&apos;;
+    this.query = &apos;&apos;;
+
+    if (options.hasOwnProperty(&apos;base&apos;)) {
+      this.base = options.base;
+    }
+    else if (Formio.baseUrl) {
+      this.base = Formio.baseUrl;
+    }
+    else {
+      this.base = window.location.href.match(/http[s]?:\/\/api./)[0];
+    }
+
+    if (!path) {
+      // Allow user to create new projects if this was instantiated without
+      // a url
+      this.projectUrl = `${this.base}/project`;
+      this.projectsUrl = `${this.base}/project`;
+      this.projectId = false;
+      this.query = &apos;&apos;;
+      return;
+    }
+
+    if (options.hasOwnProperty(&apos;project&apos;)) {
+      this.projectUrl = options.project;
+    }
+
+    const project = this.projectUrl || Formio.projectUrl;
+
+    // The baseURL is the same as the projectUrl. This is almost certainly against
+    // the Open Source server.
+    if (project &amp;&amp; this.base === project) {
+      this.noProject = true;
+      this.projectUrl = this.base;
+    }
+
+    // Normalize to an absolute path.
+    if ((path.indexOf(&apos;http&apos;) !== 0) &amp;&amp; (path.indexOf(&apos;//&apos;) !== 0)) {
+      path = this.base + path;
+    }
+
+    const hostparts = this.getUrlParts(path);
+    let parts = [];
+    const hostName = hostparts[1] + hostparts[2];
+    path = hostparts.length &gt; 3 ? hostparts[3] : &apos;&apos;;
+    const queryparts = path.split(&apos;?&apos;);
+    if (queryparts.length &gt; 1) {
+      path = queryparts[0];
+      this.query = `?${queryparts[1]}`;
+    }
+
+    // Register a specific path.
+    const registerPath = (name, base) =&gt; {
+      this[`${name}sUrl`] = `${base}/${name}`;
+      const regex = new RegExp(`/${name}/([^/]+)`);
+      if (path.search(regex) !== -1) {
+        parts = path.match(regex);
+        this[`${name}Url`] = parts ? (base + parts[0]) : &apos;&apos;;
+        this[`${name}Id`] = (parts.length &gt; 1) ? parts[1] : &apos;&apos;;
+        base += parts[0];
+      }
+      return base;
+    };
+
+    // Register an array of items.
+    const registerItems = (items, base, staticBase) =&gt; {
+      for (const i in items) {
+        if (items.hasOwnProperty(i)) {
+          const item = items[i];
+          if (Array.isArray(item)) {
+            registerItems(item, base, true);
+          }
+          else {
+            const newBase = registerPath(item, base);
+            base = staticBase ? base : newBase;
+          }
+        }
+      }
+    };
+
+    if (!this.projectUrl || (this.projectUrl === this.base)) {
+      this.projectUrl = hostName;
+    }
+
+    if (!this.noProject) {
+      // Determine the projectUrl and projectId
+      if ((path.search(/(^|\/)(project)($|\/)/) !== -1)) {
+        // Get project id as project/:projectId.
+        registerItems([&apos;project&apos;], hostName);
+      }
+      else if (hostName === this.base) {
+        // Get project id as first part of path (subdirectory).
+        if (hostparts.length &gt; 3 &amp;&amp; path.split(&apos;/&apos;).length &gt; 1) {
+          const pathParts = path.split(&apos;/&apos;);
+          pathParts.shift(); // Throw away the first /.
+          this.projectId = pathParts.shift();
+          path = `/${pathParts.join(&apos;/&apos;)}`;
+          this.projectUrl = `${hostName}/${this.projectId}`;
+        }
+      }
+      else {
+        // Get project id from subdomain.
+        if (hostparts.length &gt; 2 &amp;&amp; (hostparts[2].split(&apos;.&apos;).length &gt; 2 || hostName.includes(&apos;localhost&apos;))) {
+          this.projectUrl = hostName;
+          this.projectId = hostparts[2].split(&apos;.&apos;)[0];
+        }
+      }
+      this.projectsUrl = this.projectsUrl || `${this.base}/project`;
+    }
+
+    // Configure Form urls and form ids.
+    if ((path.search(/(^|\/)(project|form)($|\/)/) !== -1)) {
+      registerItems([&apos;form&apos;, [&apos;submission&apos;, &apos;action&apos;, &apos;v&apos;]], this.projectUrl);
+    }
+    else {
+      const subRegEx = new RegExp(&apos;/(submission|action|v)($|/.*)&apos;);
+      const subs = path.match(subRegEx);
+      this.pathType = (subs &amp;&amp; (subs.length &gt; 1)) ? subs[1] : &apos;&apos;;
+      path = path.replace(subRegEx, &apos;&apos;);
+      path = path.replace(/\/$/, &apos;&apos;);
+      this.formsUrl = `${this.projectUrl}/form`;
+      this.formUrl = this.projectUrl + path;
+      this.formId = path.replace(/^\/+|\/+$/g, &apos;&apos;);
+      const items = [&apos;submission&apos;, &apos;action&apos;, &apos;v&apos;];
+      for (const i in items) {
+        if (items.hasOwnProperty(i)) {
+          const item = items[i];
+          this[`${item}sUrl`] = `${this.projectUrl + path}/${item}`;
+          if ((this.pathType === item) &amp;&amp; (subs.length &gt; 2) &amp;&amp; subs[2]) {
+            this[`${item}Id`] = subs[2].replace(/^\/+|\/+$/g, &apos;&apos;);
+            this[`${item}Url`] = this.projectUrl + path + subs[0];
+          }
+        }
+      }
+    }
+
+    // Set the app url if it is not set.
+    if (!Formio.projectUrlSet) {
+      Formio.projectUrl = this.projectUrl;
+    }
+  }
+
+  delete(type, opts) {
+    const _id = `${type}Id`;
+    const _url = `${type}Url`;
+    if (!this[_id]) {
+      Promise.reject(&apos;Nothing to delete&apos;);
+    }
+    Formio.cache = {};
+    return this.makeRequest(type, this[_url], &apos;delete&apos;, null, opts);
+  }
+
+  index(type, query, opts) {
+    const _url = `${type}Url`;
+    query = query || &apos;&apos;;
+    if (query &amp;&amp; isObject(query)) {
+      query = `?${Formio.serialize(query.params)}`;
+    }
+    return this.makeRequest(type, this[_url] + query, &apos;get&apos;, null, opts);
+  }
+
+  save(type, data, opts) {
+    const _id = `${type}Id`;
+    const _url = `${type}Url`;
+    const method = (this[_id] || data._id) ? &apos;put&apos; : &apos;post&apos;;
+    let reqUrl = this[_id] ? this[_url] : this[`${type}sUrl`];
+    if (!this[_id] &amp;&amp; data._id &amp;&amp; (method === &apos;put&apos;) &amp;&amp; !reqUrl.includes(data._id)) {
+      reqUrl += `/${data._id}`;
+    }
+    Formio.cache = {};
+    return this.makeRequest(type, reqUrl + this.query, method, data, opts);
+  }
+
+  load(type, query, opts) {
+    const _id = `${type}Id`;
+    const _url = `${type}Url`;
+    if (query &amp;&amp; isObject(query)) {
+      query = Formio.serialize(query.params);
+    }
+    if (query) {
+      query = this.query ? (`${this.query}&amp;${query}`) : (`?${query}`);
+    }
+    else {
+      query = this.query;
+    }
+    if (!this[_id]) {
+      return Promise.reject(`Missing ${_id}`);
+    }
+    return this.makeRequest(type, this[_url] + query, &apos;get&apos;, null, opts);
+  }
+
+  makeRequest(...args) {
+    return Formio.makeRequest(this, ...args);
+  }
+
+  loadProject(query, opts) {
+    return this.load(&apos;project&apos;, query, opts);
+  }
+
+  saveProject(data, opts) {
+    return this.save(&apos;project&apos;, data, opts);
+  }
+
+  deleteProject(opts) {
+    return this.delete(&apos;project&apos;, opts);
+  }
+
+  static loadProjects(query, opts) {
+    query = query || &apos;&apos;;
+    if (isObject(query)) {
+      query = `?${Formio.serialize(query.params)}`;
+    }
+    return Formio.makeStaticRequest(`${Formio.baseUrl}/project${query}`, &apos;GET&apos;, null, opts);
+  }
+
+  loadForm(query, opts) {
+    return this.load(&apos;form&apos;, query, opts)
+      .then((currentForm) =&gt; {
+        // Check to see if there isn&apos;t a number in vId.
+        if (!currentForm.revisions || isNaN(parseInt(this.vId))) {
+          return currentForm;
+        }
+        // If a submission already exists but form is marked to load current version of form.
+        if (currentForm.revisions === &apos;current&apos; &amp;&amp; this.submissionId) {
+          return currentForm;
+        }
+        // If they specified a revision form, load the revised form components.
+        if (query &amp;&amp; isObject(query)) {
+          query = Formio.serialize(query.params);
+        }
+        if (query) {
+          query = this.query ? (`${this.query}&amp;${query}`) : (`?${query}`);
+        }
+        else {
+          query = this.query;
+        }
+        return this.makeRequest(&apos;form&apos;, this.vUrl + query, &apos;get&apos;, null, opts)
+          .then((revisionForm) =&gt; {
+            currentForm.components = revisionForm.components;
+            // Using object.assign so we don&apos;t cross polinate multiple form loads.
+            return Object.assign({}, currentForm);
+          })
+          // If we couldn&apos;t load the revision, just return the original form.
+          .catch(() =&gt; Object.assign({}, currentForm));
+      });
+  }
+
+  saveForm(data, opts) {
+    return this.save(&apos;form&apos;, data, opts);
+  }
+
+  deleteForm(opts) {
+    return this.delete(&apos;form&apos;, opts);
+  }
+
+  loadForms(query, opts) {
+    return this.index(&apos;forms&apos;, query, opts);
+  }
+
+  loadSubmission(query, opts) {
+    return this.load(&apos;submission&apos;, query, opts)
+      .then((submission) =&gt; {
+        this.vId = submission._fvid;
+        this.vUrl = `${this.formUrl}/v/${this.vId}`;
+        return submission;
+      });
+  }
+
+  saveSubmission(data, opts) {
+    if (!isNaN(parseInt(this.vId))) {
+      data._fvid = this.vId;
+    }
+    return this.save(&apos;submission&apos;, data, opts);
+  }
+
+  deleteSubmission(opts) {
+    return this.delete(&apos;submission&apos;, opts);
+  }
+
+  loadSubmissions(query, opts) {
+    return this.index(&apos;submissions&apos;, query, opts);
+  }
+
+  loadAction(query, opts) {
+    return this.load(&apos;action&apos;, query, opts);
+  }
+
+  saveAction(data, opts) {
+    return this.save(&apos;action&apos;, data, opts);
+  }
+
+  deleteAction(opts) {
+    return this.delete(&apos;action&apos;, opts);
+  }
+
+  loadActions(query, opts) {
+    return this.index(&apos;actions&apos;, query, opts);
+  }
+
+  availableActions() {
+    return this.makeRequest(&apos;availableActions&apos;, `${this.formUrl}/actions`);
+  }
+
+  actionInfo(name) {
+    return this.makeRequest(&apos;actionInfo&apos;, `${this.formUrl}/actions/${name}`);
+  }
+
+  isObjectId(id) {
+    const checkForHexRegExp = new RegExp(&apos;^[0-9a-fA-F]{24}$&apos;);
+    return checkForHexRegExp.test(id);
+  }
+
+  getProjectId() {
+    if (!this.projectId) {
+      return Promise.resolve(&apos;&apos;);
+    }
+    if (this.isObjectId(this.projectId)) {
+      return Promise.resolve(this.projectId);
+    }
+    else {
+      return this.loadProject().then((project) =&gt; {
+        return project._id;
+      });
+    }
+  }
+
+  getFormId() {
+    if (!this.formId) {
+      return Promise.resolve(&apos;&apos;);
+    }
+    if (this.isObjectId(this.formId)) {
+      return Promise.resolve(this.formId);
+    }
+    else {
+      return this.loadForm().then((form) =&gt; {
+        return form._id;
+      });
+    }
+  }
+
+  currentUser() {
+    return Formio.currentUser(this);
+  }
+
+  accessInfo() {
+    return Formio.accessInfo(this);
+  }
+
+  /**
+   * Returns the JWT token for this instance.
+   *
+   * @return {*}
+   */
+  getToken() {
+    return Formio.getToken();
+  }
+
+  /**
+   * Returns a temporary authentication token for single purpose token generation.
+   */
+  getTempToken(expire, allowed) {
+    const token = Formio.getToken();
+    if (!token) {
+      return Promise.reject(&apos;You must be authenticated to generate a temporary auth token.&apos;);
+    }
+    return this.makeRequest(&apos;tempToken&apos;, `${this.projectUrl}/token`, &apos;GET&apos;, null, {
+      ignoreCache: true,
+      header: new Headers({
+        &apos;x-expire&apos;: expire,
+        &apos;x-allow&apos;: allowed
+      })
+    });
+  }
+
+  /**
+   * Get a download url for a submission PDF of this submission.
+   *
+   * @return {*}
+   */
+  getDownloadUrl(form) {
+    if (!this.submissionId) {
+      return Promise.resolve(&apos;&apos;);
+    }
+
+    if (!form) {
+      // Make sure to load the form first.
+      return this.loadForm().then((_form) =&gt; {
+        if (!_form) {
+          return &apos;&apos;;
+        }
+        return this.getDownloadUrl(_form);
+      });
+    }
+
+    let apiUrl = `/project/${form.project}`;
+    apiUrl += `/form/${form._id}`;
+    apiUrl += `/submission/${this.submissionId}`;
+    apiUrl += &apos;/download&apos;;
+
+    let download = this.base + apiUrl;
+    return new Promise((resolve, reject) =&gt; {
+      this.getTempToken(3600, `GET:${apiUrl}`).then((tempToken) =&gt; {
+        download += `?token=${tempToken.key}`;
+        resolve(download);
+      }, () =&gt; {
+        resolve(download);
+      }).catch(reject);
+    });
+  }
+
+  uploadFile(storage, file, fileName, dir, progressCallback, url) {
+    const requestArgs = {
+      provider: storage,
+      method: &apos;upload&apos;,
+      file: file,
+      fileName: fileName,
+      dir: dir
+    };
+    const request = Formio.pluginWait(&apos;preRequest&apos;, requestArgs)
+      .then(() =&gt; {
+        return Formio.pluginGet(&apos;fileRequest&apos;, requestArgs)
+          .then((result) =&gt; {
+            if (storage &amp;&amp; isNil(result)) {
+              if (Formio.providers.storage.hasOwnProperty(storage)) {
+                const provider = new Formio.providers.storage[storage](this);
+                return provider.uploadFile(file, fileName, dir, progressCallback, url);
+              }
+              else {
+                throw (&apos;Storage provider not found&apos;);
+              }
+            }
+            return result || {url: &apos;&apos;};
+          });
+      });
+
+    return Formio.pluginAlter(&apos;wrapFileRequestPromise&apos;, request, requestArgs);
+  }
+
+  downloadFile(file) {
+    const requestArgs = {
+      method: &apos;download&apos;,
+      file: file
+    };
+
+    const request = Formio.pluginWait(&apos;preRequest&apos;, requestArgs)
+      .then(() =&gt; {
+        return Formio.pluginGet(&apos;fileRequest&apos;, requestArgs)
+          .then((result) =&gt; {
+            if (file.storage &amp;&amp; isNil(result)) {
+              if (Formio.providers.storage.hasOwnProperty(file.storage)) {
+                const provider = new Formio.providers.storage[file.storage](this);
+                return provider.downloadFile(file);
+              }
+              else {
+                throw (&apos;Storage provider not found&apos;);
+              }
+            }
+            return result || {url: &apos;&apos;};
+          });
+      });
+
+    return Formio.pluginAlter(&apos;wrapFileRequestPromise&apos;, request, requestArgs);
+  }
+
+  // Determine if the user can submit the form.
+  canSubmit() {
+    return Promise.all([
+      this.loadForm(),
+      this.currentUser(),
+      this.accessInfo()
+    ]).then((results) =&gt; {
+      const form = results.shift();
+      const user = results.shift();
+      const access = results.shift();
+
+      // Get the anonymous and admin roles.
+      let anonRole = {};
+      let adminRole = {};
+      for (const roleName in access.roles) {
+        if (access.roles.hasOwnProperty(roleName)) {
+          const role = access.roles[roleName];
+          if (role.default) {
+            anonRole = role;
+          }
+          if (role.admin) {
+            adminRole = role;
+          }
+        }
+      }
+
+      let canSubmit = false;
+      let canSubmitAnonymously = false;
+
+      // If the user is an admin, then they can submit this form.
+      if (user &amp;&amp; user.roles.includes(adminRole._id)) {
+        return true;
+      }
+
+      for (const i in form.submissionAccess) {
+        if (form.submissionAccess.hasOwnProperty(i)) {
+          const subRole = form.submissionAccess[i];
+          if (subRole.type === &apos;create_all&apos; || subRole.type === &apos;create_own&apos;) {
+            for (const j in subRole.roles) {
+              if (subRole.roles.hasOwnProperty(j)) {
+                // Check if anonymous is allowed.
+                if (anonRole._id === subRole.roles[j]) {
+                  canSubmitAnonymously = true;
+                }
+                // Check if the logged in user has the appropriate role.
+                if (user &amp;&amp; user.roles.includes(subRole.roles[j])) {
+                  canSubmit = true;
+                  break;
+                }
+              }
+            }
+            if (canSubmit) {
+              break;
+            }
+          }
+        }
+      }
+      // If their user cannot submit, but anonymous can, then delete token and allow submission.
+      if (!canSubmit &amp;&amp; canSubmitAnonymously) {
+        canSubmit = true;
+        Formio.setUser(null);
+      }
+      return canSubmit;
+    });
+  }
+
+  getUrlParts(url) {
+    return Formio.getUrlParts(url, this);
+  }
+
+  static getUrlParts(url, formio) {
+    const base = (formio &amp;&amp; formio.base) ? formio.base : Formio.baseUrl;
+    let regex = &apos;^(http[s]?:\\/\\/)&apos;;
+    if (base &amp;&amp; url.indexOf(base) === 0) {
+      regex += `(${base.replace(/^http[s]?:\/\//, &apos;&apos;)})`;
+    }
+    else {
+      regex += &apos;([^/]+)&apos;;
+    }
+    regex += &apos;($|\\/.*)&apos;;
+    return url.match(new RegExp(regex));
+  }
+
+  static serialize(obj) {
+    const str = [];
+    for (const p in obj) {
+      if (obj.hasOwnProperty(p)) {
+        str.push(`${encodeURIComponent(p)}=${encodeURIComponent(obj[p])}`);
+      }
+    }
+    return str.join(&apos;&amp;&apos;);
+  }
+
+  static getRequestArgs(formio, type, url, method, data, opts) {
+    method = (method || &apos;GET&apos;).toUpperCase();
+    if (!opts || !isObject(opts)) {
+      opts = {};
+    }
+
+    const requestArgs = {
+      url,
+      method,
+      data: data || null,
+      opts
+    };
+
+    if (type) {
+      requestArgs.type = type;
+    }
+
+    if (formio) {
+      requestArgs.formio = formio;
+    }
+    return requestArgs;
+  }
+
+  static makeStaticRequest(url, method, data, opts) {
+    const requestArgs = Formio.getRequestArgs(null, &apos;&apos;, url, method, data, opts);
+    const request = Formio.pluginWait(&apos;preRequest&apos;, requestArgs)
+      .then(() =&gt; Formio.pluginGet(&apos;staticRequest&apos;, requestArgs)
+        .then((result) =&gt; {
+          if (isNil(result)) {
+            return Formio.request(url, method, requestArgs.data, requestArgs.opts.header, requestArgs.opts);
+          }
+          return result;
+        }));
+
+    return Formio.pluginAlter(&apos;wrapStaticRequestPromise&apos;, request, requestArgs);
+  }
+
+  static makeRequest(formio, type, url, method, data, opts) {
+    if (!formio) {
+      return Formio.makeStaticRequest(url, method, data, opts);
+    }
+
+    const requestArgs = Formio.getRequestArgs(formio, type, url, method, data, opts);
+    const request = Formio.pluginWait(&apos;preRequest&apos;, requestArgs)
+      .then(() =&gt; Formio.pluginGet(&apos;request&apos;, requestArgs)
+        .then((result) =&gt; {
+          if (isNil(result)) {
+            return Formio.request(url, method, requestArgs.data, requestArgs.opts.header, requestArgs.opts);
+          }
+          return result;
+        }));
+
+    return Formio.pluginAlter(&apos;wrapRequestPromise&apos;, request, requestArgs);
+  }
+
+  static request(url, method, data, header, opts) {
+    if (!url) {
+      return Promise.reject(&apos;No url provided&apos;);
+    }
+    method = (method || &apos;GET&apos;).toUpperCase();
+
+    // For reverse compatibility, if they provided the ignoreCache parameter,
+    // then change it back to the options format where that is a parameter.
+    if (isBoolean(opts)) {
+      opts = {ignoreCache: opts};
+    }
+    if (!opts || !isObject(opts)) {
+      opts = {};
+    }
+
+    // Generate a cachekey.
+    const cacheKey = btoa(url);
+
+    // Get the cached promise to save multiple loads.
+    if (!opts.ignoreCache &amp;&amp; method === &apos;GET&apos; &amp;&amp; Formio.cache.hasOwnProperty(cacheKey)) {
+      return Formio.cache[cacheKey];
+    }
+
+    // Set up and fetch request
+    const headers = header || new Headers(opts.headers || {
+      &apos;Accept&apos;: &apos;application/json&apos;,
+      &apos;Content-type&apos;: &apos;application/json; charset=UTF-8&apos;
+    });
+    const token = Formio.getToken();
+    if (token &amp;&amp; !opts.noToken) {
+      headers.append(&apos;x-jwt-token&apos;, token);
+    }
+
+    let options = {
+      method: method,
+      headers: headers,
+      mode: &apos;cors&apos;
+    };
+    if (data) {
+      options.body = JSON.stringify(data);
+    }
+
+    // Allow plugins to alter the options.
+    options = Formio.pluginAlter(&apos;requestOptions&apos;, options, url);
+
+    const requestToken = options.headers.get(&apos;x-jwt-token&apos;);
+
+    const requestPromise = fetch(url, options)
+      .then((response) =&gt; {
+        // Allow plugins to respond.
+        response = Formio.pluginAlter(&apos;requestResponse&apos;, response, Formio);
+
+        if (!response.ok) {
+          if (response.status === 440) {
+            Formio.setToken(null);
+            Formio.events.emit(&apos;formio.sessionExpired&apos;, response.body);
+          }
+          else if (response.status === 401) {
+            Formio.events.emit(&apos;formio.unauthorized&apos;, response.body);
+          }
+          // Parse and return the error as a rejected promise to reject this promise
+          return (response.headers.get(&apos;content-type&apos;).includes(&apos;application/json&apos;)
+            ? response.json()
+            : response.text())
+            .then((error) =&gt; {
+              throw error;
+            });
+        }
+
+        // Handle fetch results
+        const token = response.headers.get(&apos;x-jwt-token&apos;);
+
+        // In some strange cases, the fetch library will return an x-jwt-token without sending
+        // one to the server. This has even been debugged on the server to verify that no token
+        // was introduced with the request, but the response contains a token. This is an Invalid
+        // case where we do not send an x-jwt-token and get one in return for any GET request.
+        let tokenIntroduced = false;
+        if (
+          (method === &apos;GET&apos;) &amp;&amp;
+          !requestToken &amp;&amp;
+          token &amp;&amp;
+          !url.includes(&apos;token=&apos;) &amp;&amp;
+          !url.includes(&apos;x-jwt-token=&apos;)
+        ) {
+          console.warn(&apos;Token was introduced in request.&apos;);
+          tokenIntroduced = true;
+        }
+
+        if (
+          response.status &gt;= 200 &amp;&amp;
+          response.status &lt; 300 &amp;&amp;
+          token &amp;&amp;
+          token !== &apos;&apos; &amp;&amp;
+          !tokenIntroduced
+        ) {
+          Formio.setToken(token);
+        }
+        // 204 is no content. Don&apos;t try to .json() it.
+        if (response.status === 204) {
+          return {};
+        }
+
+        const getResult = response.headers.get(&apos;content-type&apos;).includes(&apos;application/json&apos;)
+          ? response.json()
+          : response.text();
+        return getResult.then((result) =&gt; {
+          // Add some content-range metadata to the result here
+          let range = response.headers.get(&apos;content-range&apos;);
+          if (range &amp;&amp; isObject(result)) {
+            range = range.split(&apos;/&apos;);
+            if (range[0] !== &apos;*&apos;) {
+              const skipLimit = range[0].split(&apos;-&apos;);
+              result.skip = Number(skipLimit[0]);
+              result.limit = skipLimit[1] - skipLimit[0] + 1;
+            }
+            result.serverCount = range[1] === &apos;*&apos; ? range[1] : Number(range[1]);
+          }
+
+          if (!opts.getHeaders) {
+            return result;
+          }
+
+          const headers = {};
+          response.headers.forEach((item, key) =&gt; {
+            headers[key] = item;
+          });
+
+          // Return the result with the headers.
+          return {
+            result: result,
+            headers: headers
+          };
+        });
+      })
+      .then((result) =&gt; {
+        if (opts.getHeaders) {
+          return result;
+        }
+
+        // Shallow copy result so modifications don&apos;t end up in cache
+        if (Array.isArray(result)) {
+          const resultCopy = result.map(copy);
+          resultCopy.skip = result.skip;
+          resultCopy.limit = result.limit;
+          resultCopy.serverCount = result.serverCount;
+          return resultCopy;
+        }
+        return copy(result);
+      })
+      .catch((err) =&gt; {
+        if (err === &apos;Bad Token&apos;) {
+          Formio.setToken(null);
+          Formio.events.emit(&apos;formio.badToken&apos;, err);
+        }
+        if (err.message) {
+          err.message = `Could not connect to API server (${err.message})`;
+          err.networkError = true;
+        }
+        if (Formio.cache.hasOwnProperty(cacheKey)) {
+          // Remove failed promises from cache
+          delete Formio.cache[cacheKey];
+        }
+        // Propagate error so client can handle accordingly
+        throw err;
+      });
+
+    // Cache the request promise.
+    if (method === &apos;GET&apos;) {
+      Formio.cache[cacheKey] = requestPromise;
+    }
+
+    // Return the request promise.
+    return requestPromise;
+  }
+
+  static setToken(token) {
+    token = token || &apos;&apos;;
+    if (token === this.token) {
+      return;
+    }
+    this.token = token;
+    if (!token) {
+      Formio.setUser(null);
+      // iOS in private browse mode will throw an error but we can&apos;t detect ahead of time that we are in private mode.
+      try {
+        return localStorage.removeItem(&apos;formioToken&apos;);
+      }
+      catch (err) {
+        return cookies.erase(&apos;formioToken&apos;, {path: &apos;/&apos;});
+      }
+    }
+    // iOS in private browse mode will throw an error but we can&apos;t detect ahead of time that we are in private mode.
+    try {
+      localStorage.setItem(&apos;formioToken&apos;, token);
+    }
+    catch (err) {
+      cookies.set(&apos;formioToken&apos;, token, {path: &apos;/&apos;});
+    }
+    return Formio.currentUser(); // Run this so user is updated if null
+  }
+
+  static getToken() {
+    if (this.token) {
+      return this.token;
+    }
+    try {
+      this.token = localStorage.getItem(&apos;formioToken&apos;) || &apos;&apos;;
+      return this.token;
+    }
+    catch (e) {
+      this.token = cookies.get(&apos;formioToken&apos;);
+      return this.token;
+    }
+  }
+
+  static setUser(user) {
+    if (!user) {
+      this.setToken(null);
+      // iOS in private browse mode will throw an error but we can&apos;t detect ahead of time that we are in private mode.
+      try {
+        return localStorage.removeItem(&apos;formioUser&apos;);
+      }
+      catch (err) {
+        return cookies.erase(&apos;formioUser&apos;, {path: &apos;/&apos;});
+      }
+    }
+    // iOS in private browse mode will throw an error but we can&apos;t detect ahead of time that we are in private mode.
+    try {
+      localStorage.setItem(&apos;formioUser&apos;, JSON.stringify(user));
+    }
+    catch (err) {
+      cookies.set(&apos;formioUser&apos;, JSON.stringify(user), {path: &apos;/&apos;});
+    }
+  }
+
+  static getUser() {
+    try {
+      return JSON.parse(localStorage.getItem(&apos;formioUser&apos;) || null);
+    }
+    catch (e) {
+      return JSON.parse(cookies.get(&apos;formioUser&apos;));
+    }
+  }
+
+  static setBaseUrl(url) {
+    Formio.baseUrl = url;
+    if (!Formio.projectUrlSet) {
+      Formio.projectUrl = url;
+    }
+  }
+
+  static getBaseUrl() {
+    return Formio.baseUrl;
+  }
+
+  static setApiUrl(url) {
+    return Formio.setBaseUrl(url);
+  }
+
+  static getApiUrl() {
+    return Formio.getBaseUrl();
+  }
+
+  static setAppUrl(url) {
+    console.warn(&apos;Formio.setAppUrl() is deprecated. Use Formio.setProjectUrl instead.&apos;);
+    Formio.projectUrl = url;
+    Formio.projectUrlSet = true;
+  }
+
+  static setProjectUrl(url) {
+    Formio.projectUrl = url;
+    Formio.projectUrlSet = true;
+  }
+
+  static getAppUrl() {
+    console.warn(&apos;Formio.getAppUrl() is deprecated. Use Formio.getProjectUrl instead.&apos;);
+    return Formio.projectUrl;
+  }
+
+  static getProjectUrl() {
+    return Formio.projectUrl;
+  }
+
+  static clearCache() {
+    Formio.cache = {};
+  }
+
+  static noop() {}
+  static identity(value) {
+    return value;
+  }
+
+  static deregisterPlugin(plugin) {
+    const beforeLength = Formio.plugins.length;
+    Formio.plugins = Formio.plugins.filter((p) =&gt; {
+      if (p !== plugin &amp;&amp; p.__name !== plugin) {
+        return true;
+      }
+
+      (p.deregister || Formio.noop).call(plugin, Formio);
+      return false;
+    });
+    return beforeLength !== Formio.plugins.length;
+  }
+
+  static registerPlugin(plugin, name) {
+    Formio.plugins.push(plugin);
+    Formio.plugins.sort((a, b) =&gt; (b.priority || 0) - (a.priority || 0));
+    plugin.__name = name;
+    (plugin.init || Formio.noop).call(plugin, Formio);
+  }
+
+  static getPlugin(name) {
+    for (const plugin of Formio.plugins) {
+      if (plugin.__name === name) {
+        return plugin;
+      }
+    }
+
+    return null;
+  }
+
+  static pluginWait(pluginFn, ...args) {
+    return Promise.all(Formio.plugins.map((plugin) =&gt;
+      (plugin[pluginFn] || Formio.noop).call(plugin, ...args)));
+  }
+
+  static pluginGet(pluginFn, ...args) {
+    const callPlugin = (index) =&gt; {
+      const plugin = Formio.plugins[index];
+
+      if (!plugin) {
+        return Promise.resolve(null);
+      }
+
+      return Promise.resolve((plugin[pluginFn] || Formio.noop).call(plugin, ...args))
+        .then((result) =&gt; {
+          if (!isNil(result)) {
+            return result;
+          }
+
+          return callPlugin(index + 1);
+        });
+    };
+    return callPlugin(0);
+  }
+
+  static pluginAlter(pluginFn, value, ...args) {
+    return Formio.plugins.reduce((value, plugin) =&gt;
+      (plugin[pluginFn] || Formio.identity)(value, ...args), value);
+  }
+
+  static accessInfo(formio) {
+    const projectUrl = formio ? formio.projectUrl : Formio.projectUrl;
+    return Formio.makeRequest(formio, &apos;accessInfo&apos;, `${projectUrl}/access`);
+  }
+
+  static currentUser(formio) {
+    let projectUrl = formio ? formio.projectUrl : Formio.baseUrl;
+    projectUrl += &apos;/current&apos;;
+    const user = this.getUser();
+    if (user) {
+      return Formio.pluginAlter(&apos;wrapStaticRequestPromise&apos;, Promise.resolve(user), {
+        url: projectUrl,
+        method: &apos;GET&apos;
+      });
+    }
+    const token = Formio.getToken();
+    if (!token) {
+      return Formio.pluginAlter(&apos;wrapStaticRequestPromise&apos;, Promise.resolve(null), {
+        url: projectUrl,
+        method: &apos;GET&apos;
+      });
+    }
+    return Formio.makeRequest(formio, &apos;currentUser&apos;, projectUrl)
+      .then((response) =&gt; {
+        Formio.setUser(response);
+        return response;
+      });
+  }
+
+  static logout(formio) {
+    Formio.setToken(null);
+    Formio.setUser(null);
+    Formio.clearCache();
+    const projectUrl = formio ? formio.projectUrl : Formio.baseUrl;
+    return Formio.makeRequest(formio, &apos;logout&apos;, `${projectUrl}/logout`);
+  }
+
+  /**
+   * Attach an HTML form to Form.io.
+   *
+   * @param form
+   * @param options
+   * @param done
+   */
+  static form(form, options, done) {
+    // Fix the parameters.
+    if (!done &amp;&amp; typeof options === &apos;function&apos;) {
+      done = options;
+      options = {};
+    }
+
+    done = done || ((...args) =&gt; console.log(args));
+    options = options || {};
+
+    // IF they provide a jquery object, then select the element.
+    if (form.jquery) {
+      form = form[0];
+    }
+    if (!form) {
+      return done(&apos;Invalid Form&apos;);
+    }
+
+    const getAction = () =&gt; options.form || form.getAttribute(&apos;action&apos;);
+
+    /**
+     * Returns the current submission object.
+     * @returns {{data: {}}}
+     */
+    const getSubmission = () =&gt; {
+      const submission = {data: {}};
+
+      const setValue = (path, value) =&gt; {
+        const isArray = path.substr(-2) === &apos;[]&apos;;
+        if (isArray) {
+          path = path.replace(&apos;[]&apos;, &apos;&apos;);
+        }
+
+        const paths = path.replace(/\[|\]\[/g, &apos;.&apos;).replace(/\]$/g, &apos;&apos;).split(&apos;.&apos;);
+        let current = submission;
+
+        for (const [index, path] of paths.entries()) {
+          if (index !== paths.length - 1) {
+            if (!current[path]) {
+              current[path] = {};
+            }
+            current = current[path];
+            continue;
+          }
+
+          if (isArray) {
+            current[path] = (current[path] || []).concat(value);
+          }
+          else {
+            current[path] = value;
+          }
+        }
+      };
+
+      // Get the form data from this form.
+      const formData = new FormData(form);
+
+      for (const entry of formData) {
+        setValue(entry[0], entry[1]);
+      }
+
+      return submission;
+    };
+
+    // Submits the form.
+    const submit = (event) =&gt; {
+      if (event) {
+        event.preventDefault();
+      }
+      const action = getAction();
+      if (!action) {
+        return;
+      }
+      (new Formio(action)).saveSubmission(getSubmission()).then((sub) =&gt; {
+        done(null, sub);
+      }, done);
+    };
+
+    // Attach formio to the provided form.
+    if (form.attachEvent) {
+      form.attachEvent(&apos;submit&apos;, submit);
+    }
+    else {
+      form.addEventListener(&apos;submit&apos;, submit);
+    }
+
+    return {
+      submit,
+      getAction,
+      getSubmission
+    };
+  }
+
+  static fieldData(data, component) {
+    if (!data) {
+      return &apos;&apos;;
+    }
+    if (!component || !component.key) {
+      return data;
+    }
+    if (component.key.includes(&apos;.&apos;)) {
+      let value = data;
+      const parts = component.key.split(&apos;.&apos;);
+      let key = &apos;&apos;;
+      for (let i = 0; i &lt; parts.length; i++) {
+        key = parts[i];
+
+        // Handle nested resources
+        if (value.hasOwnProperty(&apos;_id&apos;)) {
+          value = value.data;
+        }
+
+        // Return if the key is not found on the value.
+        if (!value.hasOwnProperty(key)) {
+          return;
+        }
+
+        // Convert old single field data in submissions to multiple
+        if (key === parts[parts.length - 1] &amp;&amp; component.multiple &amp;&amp; !Array.isArray(value[key])) {
+          value[key] = [value[key]];
+        }
+
+        // Set the value of this key.
+        value = value[key];
+      }
+      return value;
+    }
+    else {
+      // Convert old single field data in submissions to multiple
+      if (component.multiple &amp;&amp; !Array.isArray(data[component.key])) {
+        data[component.key] = [data[component.key]];
+      }
+      return data[component.key];
+    }
+  }
+}
+
+// Define all the static properties.
+Formio.Headers = Headers;
+Formio.baseUrl = &apos;https://api.form.io&apos;;
+Formio.projectUrl = Formio.baseUrl;
+Formio.projectUrlSet = false;
+Formio.plugins = [];
+Formio.cache = {};
+Formio.providers = require(&apos;./providers&apos;);
+Formio.events = new EventEmitter({
+  wildcard: false,
+  maxListeners: 0
+});
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.4)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>
